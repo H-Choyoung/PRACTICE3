@@ -1,0 +1,32 @@
+{
+  "name": "practice3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/H-Choyoung/PRACTICE3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/H-Choyoung/PRACTICE3/issues"
+  },
+  "homepage": "https://github.com/H-Choyoung/PRACTICE3#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-cli": "^0.3.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.19.3",
+    "@babel/node": "^7.19.1",
+    "@babel/preset-env": "^7.19.4"
+  }
+}
