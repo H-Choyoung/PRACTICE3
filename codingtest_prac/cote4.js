@@ -19,6 +19,7 @@ let money = {
   '1백원동전': 100,
   '50원동전': 50,
   '10원동전': 10,
+
 };
 
   function change(firstChange, changeMoney) {
@@ -37,27 +38,25 @@ let money = {
           }
           // console.log(set);
           console.log(changeMoney + '원' + positive + '개');
-          // return set[positive - 1];
-          return positive;
+          return set[positive - 1];
         } else {
           console.log(changeMoney + '원' + positive + '개');
-          // return give_money;
-          return positive;
+          return give_money;
+          // return positive;
         }
       }
     }
   }
-  let result = change(65200, money['5만원권']); //15200
-  let result2 = change(result, money['1만원권']); //5200
+  let result1 = change(65200, money['5만원권']); //15200
+  let result2 = change(result1, money['1만원권']); //5200
   let result3 = change(result2, money['5백원동전']); //4700
   let result4 = change(result3, money['1백원동전']); //100
   let result5 = change(result4, money['50원동전']);
   let result6 = change(result5, money['10원동전']);
 }
-
-let obj = new Money(manwon5="1", manwon1="2", bak5="3", bak1="4", sip5="5", sip1="6");
-console.log(obj)
-
+change_money()
+// let obj = new Money(result1,result2,result3,result4,result5,result6);
+// console.log(obj)
 
 
 // 의사코드????
