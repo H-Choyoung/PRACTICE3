@@ -7,7 +7,7 @@ const linefiv1 = [0, 0, 0, 0, 0, 1, 0, 0, 0, 0];
 
 
 const bingo =()=>{
-
+  
 }
 
 function randomChangeNum(arr){
