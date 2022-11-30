@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #root {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div id="root">
+    </div>
+  </div>
+  <script>
+    // 주가 경향을 확인하기 위한 증권가 종합지수 막대그래프 만들기
+    const bar_chart =()=> {
+      const kdt_invest = [2003, 1980, 1989, 1995, 2003, 2007, 2001, 2003, 1970, 1995];
+      const root = document.getElementById("root");
+    
+      //컬러 랜덤 함수
+      const randomCol =()=> {
+        let colorSet = [];
+        for(let c in kdt_invest){
+          let randomNum = Math.floor(Math.random()*(999-111))+111;
+          let colorRandoms = '#'+randomNum
+          colorSet.push(colorRandoms);
+        }
+        return colorSet;
+      }
+      // console.log(randomCol());
+      for (let i in kdt_invest){
+        const container = document.createElement("div");
+        root.appendChild(container);
+        container.style.marginRight = '20px';
+
+        const rates = document.createElement("div");
+        const texts = document.createElement("div");
+        container.appendChild(rates);
+        container.appendChild(texts);
+
+        rates.style.width = '50px';
+        rates.style.height = (kdt_invest[i])*0.3 +'px';
+        rates.style.backgroundColor = `${randomCol()[i]}`
+        console.log(randomCol()[i])
+        texts.innerHTML = kdt_invest[i];
+        texts.style.textAlign = 'center';
+      }
+  }
+  bar_chart();
+  </script>
+</body>
+</html>
