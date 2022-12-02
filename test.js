@@ -1,4 +1,6 @@
+const { rejects } = require("assert");
 const fs = require("fs");
+const { resolve } = require("path");
 const { encode } = require("punycode");
 /* 작성 모듈 import */
 const fileMaker = require("./fileMaker.js");
@@ -35,10 +37,21 @@ const getFileNameAndCon =()=> {
     // 파일명과 내용 합치기(객체)
     obj[onlyNameStrs] = fileConts;
   });
-  console.log(obj);
+  return obj;
+  // console.log(obj);
 }
+let resultObj = getFileNameAndCon();
 
-getFileNameAndCon();
-
+console.log(Object.keys(resultObj));
 
 // const domMaker = new DomMaker('test', )
+
+function attachFiles(fileName, includeStr){
+  const objSet = {};
+  return new Promise((resolve, reject) => {
+    if(fileName.includes(includeStr)){
+      resolve(objSet[fileName]);
+    }
+    // else reject(new Error())
+  });
+}
