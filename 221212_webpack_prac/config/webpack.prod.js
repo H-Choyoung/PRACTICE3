@@ -1,4 +1,4 @@
-const {merge} = require("webpack-merge");
+const { merge } = require("webpack-merge");
 const common = require("./webpack.common");
 const path = require("path");
 
@@ -22,12 +22,12 @@ module.exports = merge(common, {
         use: [
           MiniCssExtractPlugin.loader,
           "css-loader",
-          "sass-loader"
+          "sass-loader",
         ],
       },
     ],
   },
-  Plugins: [new MiniCssExtractPlugin()],
+  plugins: [new MiniCssExtractPlugin()],
   optimization: {
     usedExports: true,
     minimize: true,
@@ -45,9 +45,9 @@ module.exports = merge(common, {
       chunks: "all",
     },
   },
-  perfomance: {
+  performance: {
     hints: false,
-    maxEntryPointSize: 512000,
+    maxEntrypointSize: 512000,
     maxAssetSize: 512000,
   },
 });
